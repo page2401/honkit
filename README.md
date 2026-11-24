@@ -25,3 +25,4 @@ description: "开源 GitBook 社区继任者 HonKit v7.0.1 基准实测：检验
 | [`02-diagrams.md`](./02-diagrams.md) | 流程图与时序图 | 正文 ```` ```mermaid ```` 保持零改动；需在 `page` 钩子提前接管代码块，防止内置 `highlight.js` 抛出未知语言告警，并兼容 PJAX 局部换页 |
 | [`03-math.md`](./03-math.md) | 数学公式排版 | 原文公式保持 100% 零改动；在 `page:before` 钩子前置提取 `$...$` / `$$...$$` 交由 `katex@0.19.1` 服务端渲染，彻底规避 `kramed` 吞噬 `\\` 与下划线 `_` |
 | [`04-directory/`](./04-directory/README.md) | 目录结构与路由取舍 | **GitBook 标志性双铁律**：根 `README.md` 强制充当全书首页（缺失直接报错中断构建），`SUMMARY.md` 白名单接管目录树；需配 `.bookignore` 防工程文件拷入 `_book/` |
+| [`05-code-blocks.md`](./05-code-blocks.md) | 高阶代码块与语法高亮 | 内置 `@honkit/honkit-plugin-highlight`（构建期 `highlight.js` 静态分词），严禁在围栏语言后追加 `title=` 或 `{3,7-9}`（否则触发未知语言异常），支持标准 `diff` 增删着色 |
