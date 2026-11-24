@@ -1,0 +1,15 @@
+{
+  "name": "page2401-honkit-benchmark",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HonKit v7.0.1 (Open-source GitBook SUMMARY.md successor) benchmark subsite for page.2401.xyz",
+  "scripts": {
+    "dev": "NODE_PATH=./plugins honkit serve . _book --port 4323",
+    "build": "NODE_PATH=./plugins honkit build . _book"
+  },
+  "dependencies": {
+    "honkit": "7.0.1",
+    "katex": "0.19.1",
+    "mermaid": "12.3.0"
+  }
+}

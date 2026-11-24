@@ -1,0 +1,17 @@
+{
+  "title": "HonKit 7.0 基准实测子站 · page2401",
+  "description": "开源 GitBook 继任者 HonKit v7.0.1 + SUMMARY.md 强中心化目录与 Nunjucks 插件体系实测",
+  "author": "page2401",
+  "language": "zh-hans",
+  "gitbook": ">=7.0.0",
+  "plugins": [
+    "local-bench"
+  ],
+  "pluginsConfig": {
+    "fontsettings": {
+      "theme": "white",
+      "family": "sans",
+      "size": 2
+    }
+  }
+}

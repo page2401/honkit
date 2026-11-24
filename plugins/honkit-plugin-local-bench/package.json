@@ -1,0 +1,11 @@
+{
+  "name": "honkit-plugin-local-bench",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zero-CDN local benchmark plugin for HonKit 7: build-time KaTeX 0.19 SSR, local Mermaid 12.3, Nunjucks hint/details blocks, GFM Alerts, and Night theme sync",
+  "main": "index.js",
+  "engines": {
+    "honkit": ">=7.0.0",
+    "gitbook": ">=3.0.0"
+  }
+}
