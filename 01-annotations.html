@@ -1,0 +1,363 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>01. 专属标注与元数据 · HonKit 7.0 基准实测子站 · page2401</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="实测 HonKit 7.0.1 的 Frontmatter 标题覆盖优先级、Nunjucks {% hint %} 标签块、kramed <details> 陷阱与 GFM Alerts 插件扩展。">
+        <meta name="generator" content="HonKit 7.0.1">
+        <meta name="author" content="page2401">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-local-bench/vendor/katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-local-bench/bench.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-diagrams.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak font-size-2 font-family-1">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    00. 概览与版本档案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="01-annotations.html">
+            
+                <a href="01-annotations.html">
+            
+                    
+                    01. 专属标注与元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02-diagrams.html">
+            
+                <a href="02-diagrams.html">
+            
+                    
+                    02. 流程图与时序图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03-math.html">
+            
+                <a href="03-math.html">
+            
+                    
+                    03. 数学公式排版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-directory/">
+            
+                <a href="04-directory/">
+            
+                    
+                    04. 目录结构与路由取舍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="04-directory/nested/01-order-and-url.html">
+            
+                <a href="04-directory/nested/01-order-and-url.html">
+            
+                    
+                    嵌套子页 A：排序前缀与 URL 纯净度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="04-directory/nested/02-sidebar-sync.html">
+            
+                <a href="04-directory/nested/02-sidebar-sync.html">
+            
+                    
+                    嵌套子页 B：多级子目录与侧边栏同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-code-blocks.html">
+            
+                <a href="05-code-blocks.html">
+            
+                    
+                    05. 高阶代码块与语法高亮
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >01. 专属标注与元数据</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="01-专属标注与元数据（honkit-70--nunjucks-块实测）">01. 专属标注与元数据（HonKit 7.0 + Nunjucks 块实测）</h1>
+<p>不同静态网站生成器对“提示框 / 标注（Callouts / Admonitions）”和页面元数据的语法约定存在显著分歧。本文件由原始 GFM 母版派生至 <strong><code>honkit@7.0.1</code></strong>，集中展现了 GitBook 遗产架构下 <strong>Nunjucks 模板预处理 + <code>kramed@0.5.6</code> 解析器</strong> 的独特边界。</p>
+<h2 id="1-frontmatter-元数据机制（summarymd-标题覆盖规则）">1. Frontmatter 元数据机制（<code>SUMMARY.md</code> 标题覆盖规则）</h2>
+<p>与 <code>mdBook</code> 完全不剥离 YAML 不同，HonKit 内置 <code>front-matter@^2.3.0</code> 解析头部 YAML，但其内部 <code>encodePage.js</code> 存在一条极具代表性的优先级铁律：</p>
+<ul>
+<li><strong>页面摘要字段生效</strong>：<code>description: "..."</code> 会被正常注入页面 <code>&lt;meta name="description" content="..."&gt;</code>。</li>
+<li><strong>标题被 <code>SUMMARY.md</code> 强制接管</strong>：只要文档被收录进 <code>SUMMARY.md</code>，<code>result.title = article.getTitle()</code> 就会<strong>无条件覆盖</strong> YAML 中的 <code>title</code> 字段！因此整本书的浏览器 <code>&lt;title&gt;</code> 与侧边栏名称完全以 <code>SUMMARY.md</code> 为唯一准绳。</li>
+</ul>
+<h2 id="2-标准提示语义块（gitbook--honkit-传统-nunjucks--hint--块）">2. 标准提示语义块（GitBook / HonKit 传统 Nunjucks <code>{% hint %}</code> 块）</h2>
+<p>传统 GitBook / HonKit 插件体系不采用 <code>::: tip</code> 三冒号指令，而是基于内置的 <strong>Nunjucks 模板引擎</strong> 注册成对标签块 <code>{% hint style="info|tip|warning|danger", title="..." %} ... {% endhint %}</code>（注意多个命名参数之间须用英文逗号 <code>,</code> 分隔）：</p>
+<p></p><aside class="honkit-callout honkit-callout-hint honkit-callout-info" data-hint-style="info"><div class="honkit-callout-title"><span class="honkit-callout-icon" aria-hidden="true">ℹ</span><span>信息 (Info)</span></div><div class="honkit-callout-body"><p>默认信息提示块：静态站点对比平台的每个子模块均独立维护 <code>main</code>（源码）与 <code>page</code>（构建产物）双分支，互不污染提交历史。</p>
+</div></aside><p></p>
+<p></p><aside class="honkit-callout honkit-callout-hint honkit-callout-tip" data-hint-style="tip"><div class="honkit-callout-title"><span class="honkit-callout-icon" aria-hidden="true">💡</span><span>性能优化建议（自定义标题语义）</span></div><div class="honkit-callout-body"><p>在本地插件 <code>honkit-plugin-local-bench</code> 的 <code>blocks.hint</code> 中调用 <code>this.renderBlock("markdown", block.body)</code>，即可在构建期输出纯静态语义化 <code>&lt;aside&gt;</code> 容器，并完整保留行内代码与数学公式能力。</p>
+</div></aside><p></p>
+<p></p><aside class="honkit-callout honkit-callout-hint honkit-callout-warning" data-hint-style="warning"><div class="honkit-callout-title"><span class="honkit-callout-icon" aria-hidden="true">⚠</span><span>Nunjucks 模板预处理器转义边界</span></div><div class="honkit-callout-body"><p>HonKit 会在 Markdown 解析前先对全文执行 Nunjucks 模板求值！虽然顶层代码块会被自动包裹，但在 HTML 块或自定义块内部演示字面量标签（如 <code>{% hint %}</code> 或双花括号）时，务必使用 <code>{% raw %}...{% endraw %}</code> 转义保护。</p>
+</div></aside><p></p>
+<p></p><aside class="honkit-callout honkit-callout-hint honkit-callout-danger" data-hint-style="danger"><div class="honkit-callout-title"><span class="honkit-callout-icon" aria-hidden="true">⛔</span><span>不可逆分支覆盖警告</span></div><div class="honkit-callout-body"><p>自动化流水线在向 <code>page</code> 分支推送构建产物时会启用 <code>force_orphan: true</code>，切勿在 <code>page</code> 分支直接手工修改代码！</p>
+</div></aside><p></p>
+<h2 id="3-可折叠详情容器（实测-kramed056-html-块吞噬陷阱）">3. 可折叠详情容器（实测 <code>kramed@0.5.6</code> HTML 块吞噬陷阱）</h2>
+<p>标准 CommonMark 允许在 <code>&lt;details&gt;</code> 与 <code>&lt;summary&gt;</code> 之间留空行以继续解析内部 Markdown；但 HonKit 默认搭载的 <code>@honkit/markdown-legacy</code> 底层仍是 2015 年的 <code>kramed@0.5.6</code>，会将 <code>&lt;details&gt;...&lt;/details&gt;</code> 整段视为不透明原始 HTML 块，导致内部代码块原样露出反引号！本站在 <code>page</code> 钩子中对 <code>&lt;details&gt;</code> 内部文本补跑了一轮 <code>toHTML.block</code> 才得以完美还原：</p>
+<details class="honkit-details"><summary>点击展开查看 HonKit Nunjucks 提示块与折叠容器源码结构</summary><div class="honkit-details-body"><pre><code class="lang-markdown">{% hint style="tip", title="性能优化建议" %}
+HonKit 继承自 GitBook 3 的 Nunjucks 模板块扩展语法。
+{% endhint %}
+</code></pre>
+<p>除了代码块，折叠容器内同样支持列表、表格与数学公式 <span class="honkit-katex-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(x) = x^2 + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span>。</p>
+</div></details>
+
+<h2 id="4-github-风格引用警报（gfm-alerts）跨框架直通测试">4. GitHub 风格引用警报（GFM Alerts）跨框架直通测试</h2>
+<p>以下三段与母版<strong>保持一字不改</strong>。实测发现两个极具时代印记的 <code>kramed@0.5.6</code>（2015 年 pre-CommonMark 分支）底层细节：① 默认不识别 <code>[!NOTE]</code> 且会把仅隔一个空行的连续 <code>&gt;</code> 引用块强行合并进同一个 <code>&lt;blockquote&gt;</code> 标签；② 本站本地插件在 <code>page</code> 钩子中通过内置 <code>cheerio</code> 按 <code>&lt;p&gt;[!TYPE]</code> 边界重新切分升级，从而在不改动母版一字一符的前提下还原三段独立警报框：</p>
+<aside class="honkit-callout honkit-callout-gfm honkit-callout-info" data-gfm-alert="NOTE"><div class="honkit-callout-title"><span class="honkit-callout-icon" aria-hidden="true">ℹ</span><span>说明 (Note)</span></div><div class="honkit-callout-body"><p>这是一段标准的 GitHub Flavored Markdown <code>[!NOTE]</code> 警报文本，用于检验各生成器对母版语法的零改造直通能力。</p></div></aside>
+<aside class="honkit-callout honkit-callout-gfm honkit-callout-important" data-gfm-alert="IMPORTANT"><div class="honkit-callout-title"><span class="honkit-callout-icon" aria-hidden="true">📌</span><span>重要 (Important)</span></div><div class="honkit-callout-body"><p>跨平台迁移 Markdown 文档时，是否原生兼容 <code>&gt; [!IMPORTANT]</code> 与 <code>&gt; [!WARNING]</code> 直接决定了母版文档的派生改造成本。</p></div></aside>
+<aside class="honkit-callout honkit-callout-gfm honkit-callout-danger" data-gfm-alert="CAUTION"><div class="honkit-callout-title"><span class="honkit-callout-icon" aria-hidden="true">⛔</span><span>警告 (Caution)</span></div><div class="honkit-callout-body"><p>若目标生成器未内置 GFM Alert 解析器（如 VuePress v1、Starlight 默认配置、Docsify v4 旧插件），上方标记会退化为普通引用块并原样露出 <code>[!CAUTION]</code> 字符串。</p></div></aside>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 00. 概览与版本档案">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-diagrams.html" class="navigation navigation-next " aria-label="Next page: 02. 流程图与时序图">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    
+    <script type="application/json" id="honkit-page-context">{"page":{"title":"01. 专属标注与元数据","description":"实测 HonKit 7.0.1 的 Frontmatter 标题覆盖优先级、Nunjucks {% hint %} 标签块、kramed \u003cdetails> 陷阱与 GFM Alerts 插件扩展。","level":"1.2","depth":1,"next":{"title":"02. 流程图与时序图","level":"1.3","depth":1,"path":"02-diagrams.md","ref":"./02-diagrams.md","articles":[]},"previous":{"title":"00. 概览与版本档案","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["local-bench"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"local-bench":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"page2401","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HonKit 7.0 基准实测子站 · page2401","language":"zh-hans","gitbook":">=7.0.0","description":"开源 GitBook 继任者 HonKit v7.0.1 + SUMMARY.md 强中心化目录与 Nunjucks 插件体系实测"},"file":{"path":"01-annotations.md","mtime":"2026-11-24T08:06:26.451Z","type":"markdown"},"gitbook":{"version":"7.0.1","time":"2026-11-24T08:06:34.318Z"},"basePath":".","book":{"language":""}}</script>
+</div>
+
+        
+    <noscript>
+        <link rel="stylesheet" href="gitbook/noscript.css">
+    </noscript>
+    
+    <script src="gitbook/boot.js"></script>
+    
+    <script src="gitbook/gitbook.js" defer></script>
+    <script src="gitbook/theme.js" defer></script>
+    
+        
+        <script src="gitbook/honkit-plugin-local-bench/vendor/mermaid/mermaid.min.js" defer></script>
+        
+    
+        
+        <script src="gitbook/honkit-plugin-local-bench/bench.js" defer></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js" defer></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js" defer></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-lunr/lunr.min.js" defer></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-lunr/search-lunr.js" defer></script>
+        
+    
+
+    </body>
+</html>
+

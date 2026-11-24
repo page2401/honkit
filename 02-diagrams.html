@@ -1,0 +1,432 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>02. 流程图与时序图 · HonKit 7.0 基准实测子站 · page2401</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="标准 GFM 母版派生至 HonKit 7.0.1：正文零改动渲染 Mermaid 12.3.0 流程图、时序图与状态机，并联动 PJAX 与夜间主题。">
+        <meta name="generator" content="HonKit 7.0.1">
+        <meta name="author" content="page2401">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-local-bench/vendor/katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-local-bench/bench.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-math.html" />
+    
+    
+    <link rel="prev" href="01-annotations.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak font-size-2 font-family-1">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    00. 概览与版本档案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-annotations.html">
+            
+                <a href="01-annotations.html">
+            
+                    
+                    01. 专属标注与元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="02-diagrams.html">
+            
+                <a href="02-diagrams.html">
+            
+                    
+                    02. 流程图与时序图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03-math.html">
+            
+                <a href="03-math.html">
+            
+                    
+                    03. 数学公式排版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-directory/">
+            
+                <a href="04-directory/">
+            
+                    
+                    04. 目录结构与路由取舍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="04-directory/nested/01-order-and-url.html">
+            
+                <a href="04-directory/nested/01-order-and-url.html">
+            
+                    
+                    嵌套子页 A：排序前缀与 URL 纯净度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="04-directory/nested/02-sidebar-sync.html">
+            
+                <a href="04-directory/nested/02-sidebar-sync.html">
+            
+                    
+                    嵌套子页 B：多级子目录与侧边栏同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-code-blocks.html">
+            
+                <a href="05-code-blocks.html">
+            
+                    
+                    05. 高阶代码块与语法高亮
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >02. 流程图与时序图</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="02-流程图与时序图（honkit-70--mermaid-123-实测）">02. 流程图与时序图（HonKit 7.0 + Mermaid 12.3 实测）</h1>
+<p>在 HonKit 7.0 中，早期社区遗留的 <code>gitbook-plugin-mermaid</code> 均已年久失修且强绑上古外部 CDN。本子站保持下方三个 <code>```mermaid</code> 代码块与母版 <strong>100% 零改动</strong>，由本地插件在 <code>page</code> 钩子（早于内置 <code>highlight.js</code> 执行）将 <code>&lt;code class="lang-mermaid"&gt;</code> 转换为 <code>&lt;pre class="mermaid"&gt;</code>，并在客户端监听 <code>gitbook.events</code> 的 <code>page.change</code> 事件驱动本地 <code>mermaid@12.3.0</code> 渲染。</p>
+<h2 id="1-复杂子图与架构流程图（flowchart-td）">1. 复杂子图与架构流程图（<code>flowchart TD</code>）</h2>
+<p>测试中文节点标签、子图嵌套（<code>subgraph</code>）、虚线边与条件分支：</p>
+<div class="honkit-mermaid-wrap"><pre class="mermaid" data-mermaid-code="flowchart TD
+    subgraph MainRepo[&quot;主仓库 page2401.github.io&quot;]
+        Master[&quot;母版 docs/*.md (Pure GFM)&quot;]
+        SubPtr[&quot;Git Submodule 指针 (sites/*)&quot;]
+        Workbench[&quot;对比工作台源码 (main)&quot;]
+    end
+
+    subgraph SubRepo[&quot;各独立派生子仓库 (sites/<id>)&quot;]
+        SrcBranch[&quot;main 分支: 框架配置 + 派生适配版 *.md&quot;]
+        Actions{&quot;GitHub Actions 构建&quot;}
+        PageBranch[&quot;page 孤儿分支: 纯静态产物 + .nojekyll&quot;]
+        SrcBranch --> Actions
+        Actions -->|&quot;自动构建发布&quot;| PageBranch
+    end
+
+    Master -.->|&quot;按各框架方言派生&quot;| SrcBranch
+    SubPtr -.->|&quot;跟踪 main 分支&quot;| SrcBranch
+    Workbench -->|&quot;对比母版与各派生版差异&quot;| Portal[&quot;https://page.2401.xyz/&quot;]
+    PageBranch -->|&quot;GitHub Organization Pages&quot;| SubSite[&quot;https://page.2401.xyz/<id>/&quot;]">flowchart TD
+    subgraph MainRepo["主仓库 page2401.github.io"]
+        Master["母版 docs/*.md (Pure GFM)"]
+        SubPtr["Git Submodule 指针 (sites/*)"]
+        Workbench["对比工作台源码 (main)"]
+    end
+
+    subgraph SubRepo["各独立派生子仓库 (sites/&lt;id&gt;)"]
+        SrcBranch["main 分支: 框架配置 + 派生适配版 *.md"]
+        Actions{"GitHub Actions 构建"}
+        PageBranch["page 孤儿分支: 纯静态产物 + .nojekyll"]
+        SrcBranch --&gt; Actions
+        Actions --&gt;|"自动构建发布"| PageBranch
+    end
+
+    Master -.-&gt;|"按各框架方言派生"| SrcBranch
+    SubPtr -.-&gt;|"跟踪 main 分支"| SrcBranch
+    Workbench --&gt;|"对比母版与各派生版差异"| Portal["https://page.2401.xyz/"]
+    PageBranch --&gt;|"GitHub Organization Pages"| SubSite["https://page.2401.xyz/&lt;id&gt;/"]</pre></div>
+<h2 id="2-编译管线交互时序图（sequencediagram）">2. 编译管线交互时序图（<code>sequenceDiagram</code>）</h2>
+<p>测试多参与者生命线、<code>alt</code> 分支块及激活框（<code>activate</code>/<code>deactivate</code>）：</p>
+<div class="honkit-mermaid-wrap"><pre class="mermaid" data-mermaid-code="sequenceDiagram
+    autonumber
+    actor Author as 文档作者
+    participant Master as 主仓母版 docs/*.md
+    participant SubGit as 子模块 main 分支
+    participant CI as GitHub Actions (Node 22)
+    participant Pages as GitHub Pages (page 分支)
+
+    Author->>Master: 编写标准 GFM 基准母版
+    Master->>SubGit: 派生适配特定 SSG 版本语法
+    SubGit->>CI: 触发 deploy-page.yml 工作流
+    activate CI
+    alt 编译型 SSG (VitePress / VuePress / Starlight / HonKit)
+        CI->>CI: 预编译静态 HTML + 公式 + 图表挂载点
+    else 运行时引擎 (Docsify v4 / v5)
+        CI->>CI: 组装原始 *.md + _sidebar.md + 锁定版本 vendor
+    end
+    CI->>Pages: force_orphan 推送至孤儿分支 page
+    deactivate CI
+    Pages-->>Author: 同源子路径 /<id>/ 即刻生效">sequenceDiagram
+    autonumber
+    actor Author as 文档作者
+    participant Master as 主仓母版 docs/*.md
+    participant SubGit as 子模块 main 分支
+    participant CI as GitHub Actions (Node 22)
+    participant Pages as GitHub Pages (page 分支)
+
+    Author-&gt;&gt;Master: 编写标准 GFM 基准母版
+    Master-&gt;&gt;SubGit: 派生适配特定 SSG 版本语法
+    SubGit-&gt;&gt;CI: 触发 deploy-page.yml 工作流
+    activate CI
+    alt 编译型 SSG (VitePress / VuePress / Starlight / HonKit)
+        CI-&gt;&gt;CI: 预编译静态 HTML + 公式 + 图表挂载点
+    else 运行时引擎 (Docsify v4 / v5)
+        CI-&gt;&gt;CI: 组装原始 *.md + _sidebar.md + 锁定版本 vendor
+    end
+    CI-&gt;&gt;Pages: force_orphan 推送至孤儿分支 page
+    deactivate CI
+    Pages--&gt;&gt;Author: 同源子路径 /&lt;id&gt;/ 即刻生效</pre></div>
+<h2 id="3-子模块同步状态机（statediagram-v2）">3. 子模块同步状态机（<code>stateDiagram-v2</code>）</h2>
+<p>测试状态机语法与状态迁移说明标签：</p>
+<div class="honkit-mermaid-wrap"><pre class="mermaid" data-mermaid-code="stateDiagram-v2
+    [*] --> MasterEdited: 更新主仓母版 docs/*.md
+    MasterEdited --> SubmoduleDerived: 同步派生适配至各子模块 *.md
+    SubmoduleDerived --> SubmodulePushed: 子模块 commit &amp; push origin main
+    SubmodulePushed --> PageDeploying: 子仓库 Actions 自动更新 page 分支
+    SubmodulePushed --> MainRepoUpdated: 主仓库更新子模块指针并构建对比数据
+    PageDeploying --> LiveSynced: 线上渲染与母版源码差异视图全部就绪
+    MainRepoUpdated --> LiveSynced: 计算相对母版改动行数完成
+    LiveSynced --> [*]">stateDiagram-v2
+    [*] --&gt; MasterEdited: 更新主仓母版 docs/*.md
+    MasterEdited --&gt; SubmoduleDerived: 同步派生适配至各子模块 *.md
+    SubmoduleDerived --&gt; SubmodulePushed: 子模块 commit &amp; push origin main
+    SubmodulePushed --&gt; PageDeploying: 子仓库 Actions 自动更新 page 分支
+    SubmodulePushed --&gt; MainRepoUpdated: 主仓库更新子模块指针并构建对比数据
+    PageDeploying --&gt; LiveSynced: 线上渲染与母版源码差异视图全部就绪
+    MainRepoUpdated --&gt; LiveSynced: 计算相对母版改动行数完成
+    LiveSynced --&gt; [*]</pre></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-annotations.html" class="navigation navigation-prev " aria-label="Previous page: 01. 专属标注与元数据">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-math.html" class="navigation navigation-next " aria-label="Next page: 03. 数学公式排版">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    
+    <script type="application/json" id="honkit-page-context">{"page":{"title":"02. 流程图与时序图","description":"标准 GFM 母版派生至 HonKit 7.0.1：正文零改动渲染 Mermaid 12.3.0 流程图、时序图与状态机，并联动 PJAX 与夜间主题。","level":"1.3","depth":1,"next":{"title":"03. 数学公式排版","level":"1.4","depth":1,"path":"03-math.md","ref":"./03-math.md","articles":[]},"previous":{"title":"01. 专属标注与元数据","level":"1.2","depth":1,"path":"01-annotations.md","ref":"./01-annotations.md","articles":[]},"dir":"ltr"},"config":{"plugins":["local-bench"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"local-bench":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"page2401","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HonKit 7.0 基准实测子站 · page2401","language":"zh-hans","gitbook":">=7.0.0","description":"开源 GitBook 继任者 HonKit v7.0.1 + SUMMARY.md 强中心化目录与 Nunjucks 插件体系实测"},"file":{"path":"02-diagrams.md","mtime":"2026-11-24T08:06:26.451Z","type":"markdown"},"gitbook":{"version":"7.0.1","time":"2026-11-24T08:06:34.318Z"},"basePath":".","book":{"language":""}}</script>
+</div>
+
+        
+    <noscript>
+        <link rel="stylesheet" href="gitbook/noscript.css">
+    </noscript>
+    
+    <script src="gitbook/boot.js"></script>
+    
+    <script src="gitbook/gitbook.js" defer></script>
+    <script src="gitbook/theme.js" defer></script>
+    
+        
+        <script src="gitbook/honkit-plugin-local-bench/vendor/mermaid/mermaid.min.js" defer></script>
+        
+    
+        
+        <script src="gitbook/honkit-plugin-local-bench/bench.js" defer></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js" defer></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js" defer></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-lunr/lunr.min.js" defer></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-lunr/search-lunr.js" defer></script>
+        
+    
+
+    </body>
+</html>
+

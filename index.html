@@ -1,0 +1,401 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>00. 概览与版本档案 · HonKit 7.0 基准实测子站 · page2401</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="开源 GitBook 社区继任者 HonKit v7.0.1 基准实测：检验 SUMMARY.md 强中心化目录、README.md 强制入口与 Nunjucks 插件钩子体系。">
+        <meta name="generator" content="HonKit 7.0.1">
+        <meta name="author" content="page2401">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-local-bench/vendor/katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-local-bench/bench.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="01-annotations.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak font-size-2 font-family-1">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    00. 概览与版本档案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-annotations.html">
+            
+                <a href="01-annotations.html">
+            
+                    
+                    01. 专属标注与元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02-diagrams.html">
+            
+                <a href="02-diagrams.html">
+            
+                    
+                    02. 流程图与时序图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03-math.html">
+            
+                <a href="03-math.html">
+            
+                    
+                    03. 数学公式排版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-directory/">
+            
+                <a href="04-directory/">
+            
+                    
+                    04. 目录结构与路由取舍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="04-directory/nested/01-order-and-url.html">
+            
+                <a href="04-directory/nested/01-order-and-url.html">
+            
+                    
+                    嵌套子页 A：排序前缀与 URL 纯净度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="04-directory/nested/02-sidebar-sync.html">
+            
+                <a href="04-directory/nested/02-sidebar-sync.html">
+            
+                    
+                    嵌套子页 B：多级子目录与侧边栏同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-code-blocks.html">
+            
+                <a href="05-code-blocks.html">
+            
+                    
+                    05. 高阶代码块与语法高亮
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >00. 概览与版本档案</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="honkit-70-基准实测子站（开源-gitbook-summarymd-继任者）">HonKit 7.0 基准实测子站（开源 GitBook <code>SUMMARY.md</code> 继任者）</h1>
+<p>本子站（<code>page2401/honkit</code>）由主仓库 <code>page2401.github.io/docs/</code> 的<strong>标准 GitHub Flavored Markdown（GFM）母版</strong>派生适配而来，用于实测经典开源 GitBook CLI 停更后由日本开源社区接力维护的现代化分支 <strong><code>honkit@7.0.1</code></strong> 在零外部 CDN 依赖下的真实表现。</p>
+<h2 id="锁定版本与技术栈档案">锁定版本与技术栈档案</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">模块 / 组件</th>
+<th style="text-align:left">锁定版本</th>
+<th style="text-align:left">角色与实测说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>honkit</code></td>
+<td style="text-align:left"><code>7.0.1</code></td>
+<td style="text-align:left">开源 GitBook CLI 现代继任者（支持 Node 22、移除内联脚本满足严格 CSP、内置 PJAX 无刷新翻页）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@honkit/markdown-legacy</code></td>
+<td style="text-align:left"><code>7.0.1</code></td>
+<td style="text-align:left">内置 Markdown 解析层（底层仍封装 2015 年的 <code>kramed@0.5.6</code> + <code>nunjucks@3.2.4</code> 模板预处理器）</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>@honkit/honkit-plugin-lunr</code></td>
+<td style="text-align:left"><code>7.0.1</code></td>
+<td style="text-align:left">开箱内置离线检索，构建期自动生成 <code>_book/search_index.json</code> 静态索引</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>katex</code></td>
+<td style="text-align:left"><code>0.19.1</code></td>
+<td style="text-align:left">通过本地插件 <code>page:before</code> / <code>page</code> 双阶段钩子实现构建期 SSR 输出 HTML + 本地 <code>.woff2</code> 字体</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>mermaid</code></td>
+<td style="text-align:left"><code>12.3.0</code></td>
+<td style="text-align:left">本地静态拷贝 <code>mermaid.min.js</code>，监听 <code>gitbook.events</code> 的 <code>page.change</code> 与内置 Night 夜间主题实时重绘</td>
+</tr>
+</tbody>
+</table>
+<h2 id="五大基准测试章节导航">五大基准测试章节导航</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">章节路径</th>
+<th style="text-align:left">测试维度</th>
+<th style="text-align:left"><code>HonKit 7.0.1</code> 派生适配实录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="01-annotations.html"><code>01-annotations.md</code></a></td>
+<td style="text-align:left">专属标注与元数据</td>
+<td style="text-align:left"><code>front-matter</code> 可剥离 YAML，但 <code>SUMMARY.md</code> 链接文本会强制覆盖 <code>page.title</code>；传统生态采用 Nunjucks <code>{% hint %}</code> 标签块，<code>kramed@0.5.6</code> 默认不识 GFM Alerts 且吞噬 <code>&lt;details&gt;</code> 内嵌 Markdown</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="02-diagrams.html"><code>02-diagrams.md</code></a></td>
+<td style="text-align:left">流程图与时序图</td>
+<td style="text-align:left">正文 <code>```mermaid</code> 保持零改动；需在 <code>page</code> 钩子提前接管代码块，防止内置 <code>highlight.js</code> 抛出未知语言告警，并兼容 PJAX 局部换页</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="03-math.html"><code>03-math.md</code></a></td>
+<td style="text-align:left">数学公式排版</td>
+<td style="text-align:left">原文公式保持 100% 零改动；在 <code>page:before</code> 钩子前置提取 <code>$...$</code> / <code>$$...$$</code> 交由 <code>katex@0.19.1</code> 服务端渲染，彻底规避 <code>kramed</code> 吞噬 <code>\\</code> 与下划线 <code>_</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="04-directory/"><code>04-directory/</code></a></td>
+<td style="text-align:left">目录结构与路由取舍</td>
+<td style="text-align:left"><strong>GitBook 标志性双铁律</strong>：根 <code>README.md</code> 强制充当全书首页（缺失直接报错中断构建），<code>SUMMARY.md</code> 白名单接管目录树；需配 <code>.bookignore</code> 防工程文件拷入 <code>_book/</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="05-code-blocks.html"><code>05-code-blocks.md</code></a></td>
+<td style="text-align:left">高阶代码块与语法高亮</td>
+<td style="text-align:left">内置 <code>@honkit/honkit-plugin-highlight</code>（构建期 <code>highlight.js</code> 静态分词），严禁在围栏语言后追加 <code>title=</code> 或 <code>{3,7-9}</code>（否则触发未知语言异常），支持标准 <code>diff</code> 增删着色</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="01-annotations.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 01. 专属标注与元数据">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    
+    <script type="application/json" id="honkit-page-context">{"page":{"title":"00. 概览与版本档案","description":"开源 GitBook 社区继任者 HonKit v7.0.1 基准实测：检验 SUMMARY.md 强中心化目录、README.md 强制入口与 Nunjucks 插件钩子体系。","level":"1.1","depth":1,"next":{"title":"01. 专属标注与元数据","level":"1.2","depth":1,"path":"01-annotations.md","ref":"./01-annotations.md","articles":[]},"dir":"ltr"},"config":{"plugins":["local-bench"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"local-bench":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"page2401","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HonKit 7.0 基准实测子站 · page2401","language":"zh-hans","gitbook":">=7.0.0","description":"开源 GitBook 继任者 HonKit v7.0.1 + SUMMARY.md 强中心化目录与 Nunjucks 插件体系实测"},"file":{"path":"README.md","mtime":"2026-11-24T08:06:26.451Z","type":"markdown"},"gitbook":{"version":"7.0.1","time":"2026-11-24T08:06:34.318Z"},"basePath":".","book":{"language":""}}</script>
+</div>
+
+        
+    <noscript>
+        <link rel="stylesheet" href="gitbook/noscript.css">
+    </noscript>
+    
+    <script src="gitbook/boot.js"></script>
+    
+    <script src="gitbook/gitbook.js" defer></script>
+    <script src="gitbook/theme.js" defer></script>
+    
+        
+        <script src="gitbook/honkit-plugin-local-bench/vendor/mermaid/mermaid.min.js" defer></script>
+        
+    
+        
+        <script src="gitbook/honkit-plugin-local-bench/bench.js" defer></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js" defer></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js" defer></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-lunr/lunr.min.js" defer></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-lunr/search-lunr.js" defer></script>
+        
+    
+
+    </body>
+</html>
+

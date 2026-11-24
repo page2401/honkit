@@ -1,0 +1,354 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>04. 目录结构与路由取舍 · HonKit 7.0 基准实测子站 · page2401</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="实测 HonKit / GitBook 派系的 README.md 强制首页铁律、SUMMARY.md 中心化白名单目录与 .bookignore 静态泄漏防护。">
+        <meta name="generator" content="HonKit 7.0.1">
+        <meta name="author" content="page2401">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-local-bench/vendor/katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-local-bench/bench.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="nested/01-order-and-url.html" />
+    
+    
+    <link rel="prev" href="../03-math.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak font-size-2 font-family-1">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    00. 概览与版本档案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../01-annotations.html">
+            
+                <a href="../01-annotations.html">
+            
+                    
+                    01. 专属标注与元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../02-diagrams.html">
+            
+                <a href="../02-diagrams.html">
+            
+                    
+                    02. 流程图与时序图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../03-math.html">
+            
+                <a href="../03-math.html">
+            
+                    
+                    03. 数学公式排版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    04. 目录结构与路由取舍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="nested/01-order-and-url.html">
+            
+                <a href="nested/01-order-and-url.html">
+            
+                    
+                    嵌套子页 A：排序前缀与 URL 纯净度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="nested/02-sidebar-sync.html">
+            
+                <a href="nested/02-sidebar-sync.html">
+            
+                    
+                    嵌套子页 B：多级子目录与侧边栏同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../05-code-blocks.html">
+            
+                <a href="../05-code-blocks.html">
+            
+                    
+                    05. 高阶代码块与语法高亮
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >04. 目录结构与路由取舍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="04-目录结构与路由取舍（gitbook--honkit-readmemd--summarymd-范式）">04. 目录结构与路由取舍（GitBook / HonKit <code>README.md</code> + <code>SUMMARY.md</code> 范式）</h1>
+<p>作为开源 GitBook 3 的正统继任者（亦是启发了 Rust <code>mdBook</code> 与早期 <code>VuePress</code> 目录设计的鼻祖），<strong><code>honkit@7.0.1</code></strong> 在处理母版多级嵌套目录 <code>04-directory/nested/</code> 时展现出三条极鲜明的架构取舍：</p>
+<ol>
+<li><strong><code>README.md</code> 即首页的强制约定</strong>：<ul>
+<li>在 GitBook / HonKit 中，根目录下的 <code>README.md</code> <strong>强制充当整本书的扉页入口</strong>（编译为 <code>_book/index.html</code>，缺失会直接抛出 <code>FileNotFoundError: README</code> 中断构建！）；</li>
+<li>同理，子目录章节入口按传统惯例由母版 <code>04-directory/index.md</code> 派生为 <code>04-directory/README.md</code>，<code>fileToOutput.js</code> 会自动将其编译为 <code>_book/04-directory/index.html</code> 并在侧边栏生成干净的 <code>04-directory/</code> 链接，在 GitHub 网页端浏览文件夹时也能自动渲染成目录导读。</li>
+</ul>
+</li>
+<li><strong><code>SUMMARY.md</code> 绝对白名单驱动 + 相对路径零 basePath 寻址</strong>：<ul>
+<li>与其 Rust 表亲 <code>mdBook</code> 一致，侧边栏章节树、自动编号（<code>1.1</code> / <code>1.2</code>）及底部的左右线性翻页完全由根级 <code>SUMMARY.md</code> 的缩进列表唯一决定；未列入 <code>SUMMARY.md</code> 的 <code>.md</code> 绝不会被编译成 HTML 页面；</li>
+<li>生成的 HTML 对所有静态资源均采用纯相对路径（如 <code>gitbook/style.css</code>、<code>../gitbook/...</code>、<code>../../gitbook/...</code>），因此无需像 Next.js / Astro 那样硬编码 <code>basePath</code>，构建产物直接挂载到 <code>/honkit/</code> 子路径即可零改造运行！</li>
+</ul>
+</li>
+<li><strong>根目录平铺的静态泄漏陷阱与 <code>.bookignore</code> 防护</strong>：<ul>
+<li>HonKit 的 <code>listAssets.js</code> 会把内容根目录下<strong>所有未被忽略且非书页的文件当作静态资源原样拷入 <code>_book/</code></strong>！若采用经典根平铺布局而不编写 <code>.bookignore</code>，<code>package.json</code>、<code>plugins/</code> 源码甚至未列入 <code>SUMMARY.md</code> 的草稿 <code>.md</code> 都会被静默复制到线上产物中。</li>
+</ul>
+</li>
+</ol>
+<h2 id="嵌套子文档入口（相对-md-互链自动编译为-html）">嵌套子文档入口（相对 <code>.md</code> 互链自动编译为 <code>.html</code>）</h2>
+<ul>
+<li><a href="nested/01-order-and-url.html">进入子文档 A：排序前缀与 URL 纯净度权衡</a></li>
+<li><a href="nested/02-sidebar-sync.html">进入子文档 B：多级子目录与侧边栏同步机制</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../03-math.html" class="navigation navigation-prev " aria-label="Previous page: 03. 数学公式排版">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="nested/01-order-and-url.html" class="navigation navigation-next " aria-label="Next page: 嵌套子页 A：排序前缀与 URL 纯净度">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    
+    <script type="application/json" id="honkit-page-context">{"page":{"title":"04. 目录结构与路由取舍","description":"实测 HonKit / GitBook 派系的 README.md 强制首页铁律、SUMMARY.md 中心化白名单目录与 .bookignore 静态泄漏防护。","level":"1.5","depth":1,"next":{"title":"嵌套子页 A：排序前缀与 URL 纯净度","level":"1.5.1","depth":2,"path":"04-directory/nested/01-order-and-url.md","ref":"./04-directory/nested/01-order-and-url.md","articles":[]},"previous":{"title":"03. 数学公式排版","level":"1.4","depth":1,"path":"03-math.md","ref":"./03-math.md","articles":[]},"articles":[{"title":"嵌套子页 A：排序前缀与 URL 纯净度","level":"1.5.1","depth":2,"path":"04-directory/nested/01-order-and-url.md","ref":"./04-directory/nested/01-order-and-url.md","articles":[]},{"title":"嵌套子页 B：多级子目录与侧边栏同步","level":"1.5.2","depth":2,"path":"04-directory/nested/02-sidebar-sync.md","ref":"./04-directory/nested/02-sidebar-sync.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["local-bench"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"local-bench":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"page2401","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HonKit 7.0 基准实测子站 · page2401","language":"zh-hans","gitbook":">=7.0.0","description":"开源 GitBook 继任者 HonKit v7.0.1 + SUMMARY.md 强中心化目录与 Nunjucks 插件体系实测"},"file":{"path":"04-directory/README.md","mtime":"2026-11-24T08:06:26.451Z","type":"markdown"},"gitbook":{"version":"7.0.1","time":"2026-11-24T08:06:34.318Z"},"basePath":"..","book":{"language":""}}</script>
+</div>
+
+        
+    <noscript>
+        <link rel="stylesheet" href="../gitbook/noscript.css">
+    </noscript>
+    
+    <script src="../gitbook/boot.js"></script>
+    
+    <script src="../gitbook/gitbook.js" defer></script>
+    <script src="../gitbook/theme.js" defer></script>
+    
+        
+        <script src="../gitbook/honkit-plugin-local-bench/vendor/mermaid/mermaid.min.js" defer></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-local-bench/bench.js" defer></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js" defer></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js" defer></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/lunr.min.js" defer></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-lunr/search-lunr.js" defer></script>
+        
+    
+
+    </body>
+</html>
+

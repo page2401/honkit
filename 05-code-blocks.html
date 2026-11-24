@@ -1,0 +1,429 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <title>05. 高阶代码块与语法高亮 · HonKit 7.0 基准实测子站 · page2401</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="实测 HonKit 7.0.1 内置 @honkit/honkit-plugin-highlight (highlight.js) 的构建期静态分词、纯语言标识硬约束、json->javascript 映射与标准 diff 高亮。">
+        <meta name="generator" content="HonKit 7.0.1">
+        <meta name="author" content="page2401">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-local-bench/vendor/katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-local-bench/bench.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="04-directory/nested/02-sidebar-sync.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak font-size-2 font-family-1">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    00. 概览与版本档案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-annotations.html">
+            
+                <a href="01-annotations.html">
+            
+                    
+                    01. 专属标注与元数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02-diagrams.html">
+            
+                <a href="02-diagrams.html">
+            
+                    
+                    02. 流程图与时序图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03-math.html">
+            
+                <a href="03-math.html">
+            
+                    
+                    03. 数学公式排版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-directory/">
+            
+                <a href="04-directory/">
+            
+                    
+                    04. 目录结构与路由取舍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="04-directory/nested/01-order-and-url.html">
+            
+                <a href="04-directory/nested/01-order-and-url.html">
+            
+                    
+                    嵌套子页 A：排序前缀与 URL 纯净度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="04-directory/nested/02-sidebar-sync.html">
+            
+                <a href="04-directory/nested/02-sidebar-sync.html">
+            
+                    
+                    嵌套子页 B：多级子目录与侧边栏同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="05-code-blocks.html">
+            
+                <a href="05-code-blocks.html">
+            
+                    
+                    05. 高阶代码块与语法高亮
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            本书使用 HonKit 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >05. 高阶代码块与语法高亮</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="05-高阶代码块与语法高亮（honkit-70--highlightjs-构建期分词实测）">05. 高阶代码块与语法高亮（HonKit 7.0 + <code>highlight.js</code> 构建期分词实测）</h1>
+<p>技术文档中超过 40% 的篇幅由代码块构成。与客户端运行时的 <code>mdBook</code> 或 <code>Docsify</code> 不同，<strong><code>honkit@7.0.1</code></strong> 开箱内置官方插件 <strong><code>@honkit/honkit-plugin-highlight</code></strong>，在 Node.js 构建期直接调用 <strong><code>highlight.js</code></strong> 将围栏代码块预编译为纯静态 <code>&lt;span class="hljs-*"&gt;</code> 标签并搭配经典的 Base16 Tomorrow 配色表，浏览器端实现 <strong>0 字节高亮运行时 JS</strong>。</p>
+<p></p><aside class="honkit-callout honkit-callout-hint honkit-callout-warning" data-hint-style="warning"><div class="honkit-callout-title"><span class="honkit-callout-icon" aria-hidden="true">⚠</span><span>HonKit 围栏信息串（Info String）纯净度铁律</span></div><div class="honkit-callout-body"><p>翻阅 <code>@honkit/honkit-plugin-highlight/index.js</code> 源码可见，HonKit 直接将围栏反引号后的整段字符串作为 <code>language</code> 传给 <code>hljs.highlight(code, { language })</code>！一旦像 VitePress 或 Quartz 那样写上 <code>title="scripts/resolve-route.ts"</code> 或 <code>{3,7-9}</code>，<code>highlight.js</code> 会立即抛出 <code>Unknown language</code> 错误并退化为完全无高纯文本。因此派生至 HonKit 时，围栏行<strong>必须严格保持纯语言名</strong>。</p>
+</div></aside><p></p>
+<h2 id="1-代码块文件名标题栏与构建期-typescript-语法高亮">1. 代码块文件名标题栏与构建期 TypeScript 语法高亮</h2>
+<p>由于 <code>@honkit/markdown-legacy</code>（<code>kramed@0.5.6</code>）不支持代码块标题元数据属性，HonKit 完美契合母版 GFM 的约定——在代码块正上方使用粗体代码路径标注文件名，下方使用纯净的 <code>```ts</code> 触发 <code>highlight.js</code> 的 TypeScript 词法着色：</p>
+<p><strong><code>scripts/resolve-route.ts</code></strong></p>
+<pre><code class="lang-ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">RouteContext</span> {
+  <span class="hljs-attr">basePath</span>: <span class="hljs-built_in">string</span>
+  <span class="hljs-attr">slug</span>: <span class="hljs-built_in">string</span>
+  <span class="hljs-attr">cleanUrls</span>: <span class="hljs-built_in">boolean</span>
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">formatDocRoute</span>(<span class="hljs-params"><span class="hljs-attr">ctx</span>: <span class="hljs-title class_">RouteContext</span></span>): <span class="hljs-built_in">string</span> {
+  <span class="hljs-keyword">const</span> prefix = ctx.<span class="hljs-property">basePath</span>.<span class="hljs-title function_">endsWith</span>(<span class="hljs-string">'/'</span>) ? ctx.<span class="hljs-property">basePath</span> : <span class="hljs-string">`<span class="hljs-subst">${ctx.basePath}</span>/`</span>
+  <span class="hljs-keyword">const</span> normalized = ctx.<span class="hljs-property">slug</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/^\/+|\/+$/g</span>, <span class="hljs-string">''</span>)
+  <span class="hljs-keyword">if</span> (!normalized || normalized === <span class="hljs-string">'index'</span>) <span class="hljs-keyword">return</span> prefix
+  <span class="hljs-keyword">return</span> ctx.<span class="hljs-property">cleanUrls</span> ? <span class="hljs-string">`<span class="hljs-subst">${prefix}</span><span class="hljs-subst">${normalized}</span>/`</span> : <span class="hljs-string">`<span class="hljs-subst">${prefix}</span><span class="hljs-subst">${normalized}</span>.html`</span>
+}
+</code></pre>
+<h2 id="2-关键行聚焦与高亮（highlightjs-行级高亮缺失与-json-映射轶事）">2. 关键行聚焦与高亮（<code>highlight.js</code> 行级高亮缺失与 <code>json</code> 映射轶事）</h2>
+<p><code>highlight.js</code> 的设计哲学是纯文本流词法状态机，本身不维护“按行切分 DOM 包裹”概念，因此 <code>@honkit/honkit-plugin-highlight</code> 既无行号列，也不支持 <code>{3,7-9}</code> 指定行背景高亮（这里同样折射出一处源码历史彩蛋：该插件内部硬编码了 <code>const MAP = { json: "javascript", ... }</code>，把所有 <code>json</code> 代码块映射给 JavaScript 语法器高亮！）。读者需结合正文提示定位第 <code>3</code> 行与第 <code>7–9</code> 行关键字段：</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"ssg-benchmark"</span>,
+  <span class="hljs-string">"routeStyle"</span>: <span class="hljs-string">"clean"</span>,
+  <span class="hljs-string">"strictZeroCdn"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"markdown"</span>: {
+    <span class="hljs-string">"mathEngine"</span>: <span class="hljs-string">"katex"</span>,
+    <span class="hljs-string">"diagramEngine"</span>: <span class="hljs-string">"mermaid"</span>,
+    <span class="hljs-string">"lineHighlight"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"codeTransformers"</span>: [<span class="hljs-string">"diff"</span>, <span class="hljs-string">"focus"</span>]
+  }
+}
+</code></pre>
+<h2 id="3-代码增删对比着色（highlightjs-原生-diff-语言支持）">3. 代码增删对比着色（<code>highlight.js</code> 原生 <code>diff</code> 语言支持）</h2>
+<p>虽然不支持在 TypeScript 代码块内插入 <code>// [!code ++]</code> 魔法注释，但 <code>highlight.js</code> 内置了完整的 <code>diff</code> 语法定义，会在构建期将删减行与新增行静态包裹为 <code>&lt;span class="hljs-deletion"&gt;</code>（Tomorrow 主题红色 <code>#c82829</code>）与 <code>&lt;span class="hljs-addition"&gt;</code>（绿色 <code>#718c00</code>），且在夜间模式（<code>.color-theme-2</code>）下自动切换对比色：</p>
+<pre><code class="lang-diff"> export function mountSubsite(baseDir: string, subPath: string): string | null {
+<span class="hljs-deletion">-  const cleanRel = decodeURIComponent(subPath).replace(/\.\./g, '')</span>
+<span class="hljs-deletion">-  return `${baseDir}/${cleanRel}`</span>
+<span class="hljs-addition">+  const resolvedBase = path.resolve(baseDir)</span>
+<span class="hljs-addition">+  const target = path.resolve(resolvedBase, decodeURIComponent(subPath).replace(/^\/+/, ''))</span>
+<span class="hljs-addition">+  return target.startsWith(`${resolvedBase}${path.sep}`) ? target : null</span>
+ }
+</code></pre>
+<h2 id="4-多语言运行时命令组（gitbook-传统平铺与升级版-details-折叠）">4. 多语言运行时命令组（GitBook 传统平铺与升级版 <code>&lt;details&gt;</code> 折叠）</h2>
+<p>传统 GitBook 社区曾流行 <code>gitbook-plugin-codetabs</code>，但多数早期 GitBook 3 插件已年久失修或注入内联脚本破坏 HonKit 7 的严格 CSP 策略。结合本站本地插件对 <code>kramed</code> <code>&lt;details&gt;</code> 内部 Markdown 解析的补全修复，使用原生折叠块即可零运行时负担组织多语言构建命令：</p>
+<details open="" class="honkit-details"><summary><strong>Node.js (<code>package.json</code>)</strong></summary><div class="honkit-details-body"><pre><code class="lang-bash">npm ci &amp;&amp; npm run build
+</code></pre>
+</div></details>
+
+<details class="honkit-details"><summary><strong>Deno 2 (<code>deno.json</code>)</strong></summary><div class="honkit-details-body"><pre><code class="lang-bash">deno task build
+</code></pre>
+</div></details>
+
+<details class="honkit-details"><summary><strong>Python (<code>requirements.txt</code>)</strong></summary><div class="honkit-details-body"><pre><code class="lang-bash">pip install -r requirements.txt &amp;&amp; sphinx-build -b dirhtml . _build/dirhtml
+</code></pre>
+</div></details>
+
+<details class="honkit-details"><summary><strong>Ruby (<code>Gemfile</code>)</strong></summary><div class="honkit-details-body"><pre><code class="lang-bash">bundle install &amp;&amp; bundle <span class="hljs-built_in">exec</span> jekyll build
+</code></pre>
+</div></details>
+
+<h2 id="5-四大底层高亮引擎能力对照小结">5. 四大底层高亮引擎能力对照小结</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">高亮引擎代表</th>
+<th style="text-align:left">典型采用框架</th>
+<th style="text-align:left">构建期零运行时 JS</th>
+<th style="text-align:left">原生行号 / 行高亮</th>
+<th style="text-align:left">保留词法着色的 Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Shiki / Expressive Code</strong></td>
+<td style="text-align:left">VitePress、Starlight、Fumadocs、Nextra、Rspress、Nuxt、Quartz</td>
+<td style="text-align:left">✅ 纯静态内联样式</td>
+<td style="text-align:left">✅ <code>{1,3-5}</code> / <code>[!code highlight]</code></td>
+<td style="text-align:left">✅ <code>// [!code ++]</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Prism.js</strong></td>
+<td style="text-align:left">Docusaurus、VuePress、Eleventy (plugin)、Gatsby</td>
+<td style="text-align:left">✅ 静态 Token 类名</td>
+<td style="text-align:left">✅ <code>{1,3-5}</code> / 魔法注释</td>
+<td style="text-align:left">⚠️ 需配 diff-highlight 插件</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Pygments / Rouge</strong></td>
+<td style="text-align:left">MkDocs Material、Sphinx、Pelican、Jekyll</td>
+<td style="text-align:left">✅ Python/Ruby 编译直出</td>
+<td style="text-align:left">✅ <code>hl_lines</code> / <code>emphasize-lines</code></td>
+<td style="text-align:left">⚠️ 仅标准 <code>diff</code> 块红绿</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>highlight.js</code>（构建期 SSR）</strong></td>
+<td style="text-align:left"><strong>HonKit 7 (<code>@honkit/honkit-plugin-highlight</code>)</strong>、Hexo</td>
+<td style="text-align:left">✅ 构建期直出 <code>.hljs-*</code> 静态标签</td>
+<td style="text-align:left">❌ 不支持 <code>{3,7-9}</code>（围栏禁带额外参数）</td>
+<td style="text-align:left">⚠️ 标准 <code>diff</code> 块 <code>.hljs-addition</code> / <code>.hljs-deletion</code></td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04-directory/nested/02-sidebar-sync.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 嵌套子页 B：多级子目录与侧边栏同步">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    
+    <script type="application/json" id="honkit-page-context">{"page":{"title":"05. 高阶代码块与语法高亮","description":"实测 HonKit 7.0.1 内置 @honkit/honkit-plugin-highlight (highlight.js) 的构建期静态分词、纯语言标识硬约束、json->javascript 映射与标准 diff 高亮。","level":"1.6","depth":1,"previous":{"title":"嵌套子页 B：多级子目录与侧边栏同步","level":"1.5.2","depth":2,"path":"04-directory/nested/02-sidebar-sync.md","ref":"./04-directory/nested/02-sidebar-sync.md","articles":[]},"dir":"ltr"},"config":{"plugins":["local-bench"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"white","family":"sans","size":2},"local-bench":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"page2401","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"HonKit 7.0 基准实测子站 · page2401","language":"zh-hans","gitbook":">=7.0.0","description":"开源 GitBook 继任者 HonKit v7.0.1 + SUMMARY.md 强中心化目录与 Nunjucks 插件体系实测"},"file":{"path":"05-code-blocks.md","mtime":"2026-11-24T08:06:26.451Z","type":"markdown"},"gitbook":{"version":"7.0.1","time":"2026-11-24T08:06:34.318Z"},"basePath":".","book":{"language":""}}</script>
+</div>
+
+        
+    <noscript>
+        <link rel="stylesheet" href="gitbook/noscript.css">
+    </noscript>
+    
+    <script src="gitbook/boot.js"></script>
+    
+    <script src="gitbook/gitbook.js" defer></script>
+    <script src="gitbook/theme.js" defer></script>
+    
+        
+        <script src="gitbook/honkit-plugin-local-bench/vendor/mermaid/mermaid.min.js" defer></script>
+        
+    
+        
+        <script src="gitbook/honkit-plugin-local-bench/bench.js" defer></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js" defer></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js" defer></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-lunr/lunr.min.js" defer></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-lunr/search-lunr.js" defer></script>
+        
+    
+
+    </body>
+</html>
+
